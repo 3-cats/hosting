@@ -1,0 +1,445 @@
+*{
+	padding: 0px;
+	margin: 0px;
+	font-family: 'Raleway', sans-serif;
+	color: white;
+}
+h1{
+	font-size: 30px;
+}
+.paneles{
+	height: 100vh;
+	position: relative;
+}
+.tabs__sidebar_res{
+		display: none;
+	}
+/*     Panel Izquierdo     */
+.panel_izq{
+	height: 100%;
+	width: 50%;
+	float: left;
+	background: url(../img/photo_2021-07-14_13-18-17.jpg);
+	background-size: cover;
+}
+.cont_centrado{
+	height: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	background-color:rgba(0, 14, 16, .6);
+}
+.cont_elem{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.image_pers img{
+	border-radius: 210px;
+	margin: 10px 0px;
+}
+.titulos{
+	margin: 25px 0px;
+	color: white;
+}
+.titulos h1{
+	margin-bottom: 10px;
+}
+/*     Panel Izquierdo     */
+/*     Panel Derecho     */
+.panel_der{
+	height: 100%;
+	width: 50%;
+	float: right;
+	background-color: #333333
+}
+.tabs__sidebar{
+	display: flex;
+	height: 10vh;
+}
+.tabs__button{
+	background-color: #424242;
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	font-size: 28px;
+	min-width: 100px;
+	height: 10vh;
+	flex-grow: 1;
+}
+.tabs__button:active{
+	background: #424242;
+}
+.tabs__button--active{
+	background: #333333;
+	font-weight: bold;
+}
+.tabs__content{
+	font-size: 16px;
+	display: none;
+}
+.tabs__content--active{
+	display: block;
+}
+.tabs__content > :first-child{
+	margin-top: 0px;
+}
+.spacer{
+    flex: 1;
+}
+/*     Panel Derecho     */
+/*     Sobre mí     */
+._sobremi{
+	display: flex;
+	height: 90vh;
+	background-color: #333333;
+	flex-wrap: wrap;
+}
+.res_smi_titulos{
+	display: none;
+}
+.res_smi_foto{
+	display: none;
+}
+.texto_smi{
+	margin: 20% 10%;
+}
+.texto_smi p{
+	text-align: justify;
+	line-height: 1.5;
+}
+.texto_smi a{
+	text-decoration: none;
+	color: #000E10;
+}
+a:link {
+  color: white;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: white;
+  background-color: transparent;
+  text-decoration: none;
+}
+/*     Sobre mí     */
+/*     Proyectos     */
+._proyectos{
+	display: flex;
+	height: 80vh;
+	background-color: #333333;
+	justify-content: center;
+}
+.contenido_proy_cs{
+	margin: 10% 10%;
+}
+
+.contenido_proy_cs p{
+	text-align: justify;
+	line-height: 1.5;
+}
+.certificacion{
+	background-color: #333333;
+	display: flex;
+	height: 20vh;
+	width: 50%;
+	position: absolute;
+	bottom: 0;
+	align-items: center;
+	overflow: hidden
+}
+.text_cert{
+	width: 50%;
+  float: left;
+}
+.text_cert p{
+	text-align: right;
+	margin-right: 5%;
+}
+.img_cert{
+	width: 50%;
+  float: right;
+}
+.img_cert img{
+	margin-left: 5%;
+}
+
+@keyframes blinker{
+	0%{
+		opacity: .30;
+	}
+	4%{
+		opacity: .45;
+	}
+	16%{
+		opacity: .60;
+	}
+	32%{
+		opacity: .75;
+	}
+	48%{
+		opacity: .90;
+	}
+	64%{
+		opacity: .75;
+	}
+	80%{
+		opacity: .60;
+	}
+	96%{
+		opacity: .45;
+	}
+	100%{
+		opacity: .30;
+	}
+}
+
+/*     Proyectos     */
+/*     Contacto     */
+._contacto{
+	display: flex;
+	flex-wrap: wrap;
+	height: 90vh;
+	align-items: center;
+	justify-content: center;
+	background-color: #333333;
+}
+._contacto h3{
+	color: white;
+}
+.formulario{
+	display: flex;
+	text-indent: 10px;
+}
+.formulario input{
+	padding: 15px;
+	opacity: 80%;
+	border-radius: 3px;
+	border-color: #999999;
+}
+.formulario input:hover{
+	opacity: 90%;
+}
+.viscorreo input{
+	width: 280px;
+	margin: 20px 15px 15px 15px;
+	opacity: 80%;
+	border-radius: 3px;
+	border-color: #999999;
+}
+.viscorreo input:hover{
+	opacity: 90%;
+}
+.Mensaje{
+	width: 280px;
+	height: 120px;
+	margin: 20px 15px 15px 15px;
+}
+.enviar button{
+	margin: 10px 15px 15px 15px;
+	background-color: #999999;
+	color: white;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 2px;
+}
+.enviar button:hover{
+	background-color: #F2F2F2;
+	color: gray;
+}
+/*     Contacto     */
+/*     Footer     */
+#footer{
+	display: flex;
+	position: relative;
+	bottom: 0;
+	height: 10vh;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+	background-image: url(../img/canvas_f.png);
+	color: white;
+}
+.pie_cont{
+	padding: 5px;
+	margin: 5px 0px;
+}
+.redes{
+	display: flex;
+	justify-content: center;
+}
+/*     Footer     */
+/*     Scrollbar     */
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background:  #333333;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #999999;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #F2F2F2;
+}
+/*     Scrollbar     */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width:  1365px){
+	.paneles{
+		height: auto;
+	}
+	.tabs__sidebar_res{
+		display: none;
+	}
+	.panel_izq{
+		display: none;
+	}
+	.panel_der{
+		width: 100%;
+		position: relative;
+	}
+	.tabs__content{
+		height: auto;
+	}
+	/*     Sobre mí     */
+	._sobremi{
+		display: flex;
+		flex-direction: column;
+		height: auto;
+		justify-content: center;
+		background-color: #333333;
+	}
+	.res_smi_titulos{
+		margin: 10% 10%;
+	}
+	.res_smi_titulos h1{
+		display: block;
+	}
+	.res_smi_foto{
+		display: flex;
+		margin: 10% 0%;
+		justify-content: center;
+		background-color: #333333;
+	}
+	.res_smi_foto img{
+		border-radius: 180px;
+	}
+	.res_lado_der{
+		background-color: #333333;
+	}
+	.certificacion{
+		position: relative;
+		width: 100%;
+		margin: 10%;
+	}
+	/*     Sobre mí     */
+	/*     Proyectos     */
+	/*._proyectos{
+		min-height: auto;     Cuando se agregue contenido el tamaño debe ser automático para evitar el desbordamiento.
+	}*/
+	/*     Proyectos     */
+}
+
+@media only screen and (max-width:  768px){
+	.paneles{
+		height: auto;
+		position: relative;
+	}
+	.tabs__sidebar{
+		display: none;
+	}
+	.tabs__sidebar_res{
+		display: flex;
+		height: 10vh;
+	}
+	.tabs__content{
+		height: auto;
+	}
+	/*     Sobre mi     */
+	._sobremi{
+		height: auto;
+		position: relative;
+	}
+	.res_smi_titulos{
+		margin: 10% 10%;
+	}
+	.texto_smi{
+		margin: 10% 10%;
+	}
+	.res_smi_foto img{
+		width: 320px;
+		height: 320px;
+	}
+	/*     Sobre mi     */
+}
+
+@media only screen and (max-width:  480px){
+	.paneles{
+		height: auto;
+		position: relative;
+	}
+	.tabs__sidebar{
+		display: none;
+	}
+	.tabs__sidebar_res{
+		display: flex;
+		height: 10vh;
+	}
+	.tabs__content{
+		height: auto;
+	}
+	/*     Sobre mi     */
+	._sobremi{
+		height: auto;
+		position: relative;
+	}
+	.res_smi_titulos{
+		margin: 10% 10%;
+	}
+	.texto_smi {
+		margin: 10% 10%;
+	}
+	.texto_smi p{
+		text-align: justify;
+	}
+	.res_smi_foto img{
+		width: 320px;
+		height: 320px;
+	}
+	/*     Sobre mi     */
+}
