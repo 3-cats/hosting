@@ -127,10 +127,10 @@ a:visited {
   text-decoration: none;
 }
 /*     Sobre mí     */
-/*     Proyectos     */
+/*     Trabaja tus datos     */
 ._proyectos{
 	display: flex;
-	height: 80vh;
+	height: 60vh;
 	background-color: #333333;
 	justify-content: center;
 }
@@ -149,24 +149,38 @@ a:visited {
 	width: 50%;
 	position: absolute;
 	bottom: 0;
-	align-items: center;
 	overflow: hidden
 }
-.text_cert{
+.text_cs{
+	line-height: 1.5;
+}
+.tit_cert{
+	height: 10vh;
+	text-align: center;
+}
+.cert_izq{
+	float: left;
 	width: 50%;
-  float: left;
+	text-align: center;
+	align-items: center;
 }
-.text_cert p{
-	text-align: right;
-	margin-right: 5%;
-}
-.img_cert{
+.cert_der{
+	float: right;
 	width: 50%;
-  float: right;
+	text-align: center;
+	align-items: center;
 }
-.img_cert img{
-	margin-left: 5%;
+ul{
+  list-style-type: none;
 }
+li {
+  text-indent: 25px; /* Sangría de 20 píxeles */
+}
+li::before {
+  content: "» "; /* Símbolo Unicode (comillas francesas) */
+ }
+/*     Trabaja tus datos     */
+
 
 @keyframes blinker{
 	0%{
@@ -198,7 +212,7 @@ a:visited {
 	}
 }
 
-/*     Proyectos     */
+
 /*     Contacto     */
 ._contacto{
 	display: flex;
