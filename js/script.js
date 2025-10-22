@@ -35,7 +35,7 @@ function img_proy(){
 	image.src = images[aleatorio];
 	console.log("Ejecutando la función img_proy " + aleatorio);
 }
-setInterval(img_proy, 10000)
+setInterval(img_proy, 8000)
 
 document.addEventListener("DOMContentLoaded", () => {
 	setupTabs();
