@@ -41,27 +41,30 @@
 					<button class="tabs__button" data-for-tab="3"><i class="fas fa-envelope"></i></button>
 				</div>
 				<div class="tabs__content tabs__content--active res_lado_der" data-tab="1">
-					<div class="_sobremi">
-						<div class="res_smi_titulos">
-							<h1>Eduardo Díaz Cruz</h1>
+					<section class="_sobremi">
+						<div class="_sobremi_textos">
+							<div class="res_smi_titulos">
+								<h1>Eduardo Díaz Cruz</h1>
+							</div>
+							<div class="texto_smi">
+								<h2><a href="https://www.ingenieria.unam.mx/base_carrer.php?carrer=geomatica" target="_blank">Ingeniero Geomático</a>.</h2>
+								<p>Tengo experiencia en análisis espacial, diseñar, modificar y enriquecer datos geográficos, en mi trabajo incorporo lenguajes de programación y software GIS para diseñar herramientas de geoprocesamiento, administrar bases de datos y servicios alojados en la nube.</p>
+								<p>Actualmente trabajo como Ingeniero de Soluciones para esri México y estoy especializado en la plataforma ArcGIS.</p>
+								<p>Antes de eso trabajé en campo realizando levantamientos topográficos, vuelos de dron, ubicación de puntos GNSS, etc.</p>
+							</div>
 						</div>
-						<div class="texto_smi">
-							<p>Soy <a href="https://www.ingenieria.unam.mx/programas_academicos/licenciatura/geomatica.php" target="_blank">Ingeniero Geomático</a> de profesión.</p><br><br>
-							<p>Tengo experiencia en análisis espacial, diseñar, modificar y enriquecer datos geográficos, en mi trabajo incorporo lenguajes de programación y software GIS para diseñar herramientas de geoprocesamiento, administrar bases de datos y servicios alojados en la nube. </p><br>
-							<p>Actualmente trabajo como Ingeniero de Soluciones para esri México y estoy especializado en la plataforma ArcGIS.<br><br>Antes de eso trabajé en campo realizando levantamientos topográficos, vuelos de dron, ubicación de puntos GNSS, etc.</p>
+						<div class="res_smi_foto">
+							<img id="P_imgs" src="img/IMG_20200601_223612738.jpg" alt="" width="360px" height="360px">
 						</div>
-					</div>
-					<div class="res_smi_foto">
-						<img id="P_imgs" src="img/IMG_20200601_223612738.jpg" alt="" width="360px" height="360px">
-					</div>
+					</section>
 				</div>
 				<div class="tabs__content" data-tab="2">
-					<section class="_proyectos">
-						<div class="contenido_proy_cs">
+					<section class="_colaboremos">
+						<div class="contenido_colaboremos">
 							<div class="text_cs">
-								<h2>Que tus datos trabajen</h2><br>
+								<h2>Que tus datos trabajen</h2>
 								<p>Como especialista en Sistemas de Información Geográfica puedo ayudarte a entender y potenciar tus datos, generar mapas, estadística que te permita conocer y pronosticar resultados o generar herramientas especializadas que beneficien tu flujo de trabajo.</p><br>
-								<p>Algunas de mis herramientas son:</p><br>
+								<p>Algunas de mis herramientas son:</p>
 								<ul>
 									<li>ArcGIS Pro</li>
 									<li>Python - ArcPy, ArcGIS API for Python</li>
@@ -70,55 +73,44 @@
 									<li>SQL</li>
 									<li>HTML y CSS</li>
 								</ul>
-								<br><p> O si lo que necesitas es asesoría puedo ayudarte en el manejo de la plataforma ArcGIS (ArcGIS Pro, ArcGIS Online, ArcGIS Enterprise) y sus aplicaciones o con los objetivos que persigas.</p>
+								<p> O si lo que necesitas es asesoría puedo ayudarte en el manejo de la plataforma ArcGIS (ArcGIS Pro, ArcGIS Online, ArcGIS Enterprise) y sus aplicaciones o con los objetivos que persigas.</p>
 							</div>
 						</div>
-					</section>
-					<section class="tit_cert">
-						<div>
-							<h2>Estoy certificado :)</h2>
-						</div>
-					</section>
-					<section class="certificacion">
-						<div class="cert_izq">
-							<div class="img_cert">
-								<a href="https://www.credly.com/badges/19430b8f-0661-4c61-8508-1d1af53d0ff2/public_url" target="_blank"><img src="img/arcgis-pro-associate-2101.png" alt="Certificacion" border="0" width="117px" height="117px"></a>
-							</div>
-							<div>
-								<p>ArcGIS Pro Associate 2101</p>
-							</div>
-						</div>
-						<div class="cert_der">
-							<div class="img_cert">
-								<a href="https://www.credly.com/badges/b387f9c3-ede0-44b2-9de6-8d5a895867f4/public_url" target="_blank"><img src="img/arcgis-api-for-python-associate-2024.1.png" alt="Certificacion" border="0"></a>
-							</div>
-							<div>
+						<div class="certificaciones">
+							<h2>Mis certificaciones</h2>
+							<div class="cert_1">
+								<img src="img/arcgis-api-for-python-associate-2024.1.png" alt="Certification Badge">
 								<p>ArcGIS API for Python</p>
+							</div>
+							<div class="cert_2">
+								<img src="img/arcgis-pro-associate-2101.png" alt="Certification Badge">
+								<p>ArcGIS Pro Associate 2025</p>
 							</div>
 						</div>
 					</section>
 				</div>
 				<div class="tabs__content" data-tab="3">
-					<div class="_contacto">
+					<section class="_contacto">
 						<div class="formulario">
 							<form action="https://formsubmit.co/167e45acb3f897717c92f632afd4c8d5" method="POST">
-								<div class="viscorreo">
-									<h3>Tu correo electrónico:</h3>
-									<input type="email" name="email" placeholder="Tu correo..." required="">
+								
+								<input type="hidden" name="_subject" value="Mensaje de visitante.">
+
+								<div class="form-group">
+									<label for="email">Tu correo electrónico:</label>
+									<input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required>
 								</div>
-								<div class="Asunto">
-									<input type="hidden" name="_subject" value="Mensaje de visitante.">
+
+								<div class="form-group">
+									<label for="mensaje">Mensaje:</label>
+									<textarea id="mensaje" name="mensaje" placeholder="Escribe tu mensaje aquí..." required></textarea>
 								</div>
-								<div class="vismensaje">
-									<h3>Mensaje:</h3>
-									<input type="text" name="mensaje" class="Mensaje" placeholder="Escribe tu mensaje..." required>
-								</div>
-								<div class="enviar">
-									<button type="submit">Enviar</button>
-								</div>
+
+								<button type="submit" class="btn-submit">Enviar</button>
+								
 							</form> 
 						</div>
-					</div>
+					</section>
 				</div>
 			</section>
 		</section>
@@ -130,7 +122,7 @@
 				<a href="https://www.linkedin.com/in/eduardodc-xyz/" target="_blank"><img src="img/in_logo.png" alt="in Logo" border="0" width="50px"></a>
 			</div>
 			<div class="derechos">
-				<p>Eduardo DC, 2025. &copy;</p>
+				<p>Eduardo DC, 2026. &copy;</p>
 			</div>
 		</div>
 	</footer>

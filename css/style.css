@@ -1,102 +1,128 @@
-*{
-	padding: 0px;
-	margin: 0px;
-	font-family: 'Raleway', sans-serif;
-	color: white;
+
+
+* {
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Raleway', sans-serif;
+    color: white;
+    box-sizing: border-box; /* Crucial: ensures paddings don't bloat element widths */
 }
-h1{
-	font-size: 30px;
+h1 {
+    font-size: 30px;
 }
-.paneles{
-	height: 100vh;
-	position: relative;
+
+/* Base Layout Container */
+.paneles {
+    min-height: 100vh; /* Changed from height: 100vh to allow growth if content needs it */
+    display: flex;     /* Dropped legacy float support for modern flexbox structure */
+    flex-wrap: wrap;
 }
-.tabs__sidebar_res{
-		display: none;
-	}
-/*     Panel Izquierdo     */
-.panel_izq{
-	height: 100%;
-	width: 50%;
-	float: left;
-	background: url(../img/photo_2021-07-14_13-18-17.jpg);
-	background-size: cover;
+.tabs__sidebar_res {
+    display: none;
 }
-.cont_centrado{
-	height: 100%;
-	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
-	justify-content: center;
-	background-color:rgba(0, 14, 16, .6);
+
+/* Panel Left */
+.panel_izq {
+    min-height: 100vh;
+    width: 50%;
+    background: url(../img/photo_2021-07-14_13-18-17.jpg);
+    background-size: cover;
+    background-position: center;
 }
-.cont_elem{
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+.cont_centrado {
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 14, 16, .6);
 }
-.image_pers img{
-	border-radius: 210px;
-	margin: 10px 0px;
+.cont_elem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-.titulos{
-	margin: 25px 0px;
-	color: white;
+.image_pers img {
+    border-radius: 210px;
+    margin: 10px 0px;
 }
-.titulos h1{
-	margin-bottom: 10px;
+.titulos {
+    margin: 25px 0px;
+    color: white;
 }
-/*     Panel Izquierdo     */
-/*     Panel Derecho     */
-.panel_der{
-	height: 100%;
-	width: 50%;
-	float: right;
-	background-color: #333333
+.titulos h1 {
+    margin-bottom: 10px;
 }
-.tabs__sidebar{
-	display: flex;
-	height: 10vh;
+
+/* Panel Right */
+.panel_der {
+    min-height: 100vh;
+    width: 50%;
+    background-color: #333333;
+    display: flex;
+    flex-direction: column;
 }
-.tabs__button{
-	background-color: #424242;
-	border: none;
-	color: white;
-	padding: 15px 32px;
-	text-align: center;
-	text-decoration: none;
-	font-size: 28px;
-	min-width: 100px;
-	height: 10vh;
-	flex-grow: 1;
+.tabs__sidebar {
+    display: flex;
+    height: 10vh;
 }
-.tabs__button:active{
-	background: #424242;
+.tabs__button {
+    background-color: #424242;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 28px;
+    min-width: 100px;
+    height: 10vh;
+    flex-grow: 1;
 }
-.tabs__button--active{
-	background: #333333;
-	font-weight: bold;
+.tabs__button:active {
+    background: #424242;
 }
-.tabs__content{
-	font-size: 16px;
-	display: none;
+.tabs__button--active {
+    background: #333333;
+    font-weight: bold;
 }
-.tabs__content--active{
-	display: block;
+.tabs__content {
+    font-size: 16px;
+    display: none;
+    flex-grow: 1;
 }
-.tabs__content > :first-child{
-	margin-top: 0px;
+.tabs__content--active {
+    display: flex;
+    flex-direction: column;
 }
-.spacer{
+.tabs__content > :first-child {
+    margin-top: 0px;
+}
+.spacer {
     flex: 1;
 }
-/*     Panel Derecho     */
-/*     Sobre mí     */
-._sobremi{
-	display: flex;
-	height: 90vh;
-	background-color: #333333;
-	flex-wrap: wrap;
+
+/* About Me Section */
+._sobremi {
+    display: flex;
+    flex-direction: column;
+    min-height: 90vh; 
+    background-color: #333333;
+    /* justify-content: center; <-- REMOVE THIS */
+    justify-content: flex-start; /* Aligns content to the top naturally */
+}
+._sobremi_textos{
+	margin: 5% 10%;
+}
+.texto_smi h2{
+	margin-bottom: 30px;
+}
+.texto_smi p{
+	text-align: justify;
+	margin-bottom: 24px; /* Spaces paragraphs away from each other */
+    line-height: 1.5;
+}
+.texto_smi a{
+    text-decoration: none;
 }
 .res_smi_titulos{
 	display: none;
@@ -104,356 +130,428 @@ h1{
 .res_smi_foto{
 	display: none;
 }
-.texto_smi{
-	margin: 20% 10%;
-}
-.texto_smi p{
-	text-align: justify;
-	line-height: 1.5;
-}
-.texto_smi a{
-	text-decoration: none;
-	color: #000E10;
-}
-a:link {
-  color: white;
-  background-color: transparent;
-  text-decoration: none;
+
+/* Colaboremos Section */
+._colaboremos {
+    display: flex;
+    flex-direction: column;
+    min-height: 90vh; 
+    background-color: #333333;
+    /* justify-content: space-between; <-- REMOVE THIS */
+    justify-content: flex-start; /* Aligns items to the top naturally */
+    gap: 40px; /* Explicitly controls the spacing between text and certifications */
 }
 
-a:visited {
-  color: white;
-  background-color: transparent;
-  text-decoration: none;
+.contenido_colaboremos {
+    margin: 5% 10%;
 }
-/*     Sobre mí     */
-/*     Trabaja tus datos     */
-._proyectos{
-	display: flex;
-	height: 60vh;
-	background-color: #333333;
-	justify-content: center;
+.contenido_colaboremos h2{
+	margin-bottom: 30px;
 }
-.contenido_proy_cs{
-	margin: 10% 10%;
+.contenido_colaboremos p {
+    text-align: justify;
+	margin-bottom: 24px; /* Spaces paragraphs away from each other */
+    line-height: 1.5;
 }
-
-.contenido_proy_cs p{
-	text-align: justify;
-	line-height: 1.5;
+.contenido_colaboremos ul{
+	margin-bottom: 24px;
 }
-.certificacion{
-	background-color: #333333;
-	display: flex;
-	height: 20vh;
-	width: 50%;
-	position: absolute;
-	bottom: 0;
-	overflow: hidden
+.certificaciones h2{
+    margin-bottom: 30px;
 }
-.text_cs{
-	line-height: 1.5;
-}
-.tit_cert{
-	height: 10vh;
-	text-align: center;
-}
-.cert_izq{
-	float: left;
-	width: 50%;
-	text-align: center;
-	align-items: center;
-}
-.cert_der{
-	float: right;
-	width: 50%;
-	text-align: center;
-	align-items: center;
-}
-ul{
-  list-style-type: none;
-}
-li {
-  text-indent: 25px; /* Sangría de 20 píxeles */
-}
-li::before {
-  content: "» "; /* Símbolo Unicode (comillas francesas) */
- }
-/*     Trabaja tus datos     */
-
-
-@keyframes blinker{
-	0%{
-		opacity: .30;
-	}
-	4%{
-		opacity: .45;
-	}
-	16%{
-		opacity: .60;
-	}
-	32%{
-		opacity: .75;
-	}
-	48%{
-		opacity: .90;
-	}
-	64%{
-		opacity: .75;
-	}
-	80%{
-		opacity: .60;
-	}
-	96%{
-		opacity: .45;
-	}
-	100%{
-		opacity: .30;
-	}
+.certificaciones {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Creates two equal columns */
+    gap: 20px; /* Adjust spacing between elements as needed */
+    width: 100%;
 }
 
-
-/*     Contacto     */
-._contacto{
-	display: flex;
-	flex-wrap: wrap;
-	height: 90vh;
-	align-items: center;
-	justify-content: center;
-	background-color: #333333;
-}
-._contacto h3{
-	color: white;
-}
-.formulario{
-	display: flex;
-	text-indent: 10px;
-}
-.formulario input{
-	padding: 15px;
-	opacity: 80%;
-	border-radius: 3px;
-	border-color: #999999;
-}
-.formulario input:hover{
-	opacity: 90%;
-}
-.viscorreo input{
-	width: 280px;
-	margin: 20px 15px 15px 15px;
-	opacity: 80%;
-	border-radius: 3px;
-	border-color: #999999;
-}
-.viscorreo input:hover{
-	opacity: 90%;
-}
-.Mensaje{
-	width: 280px;
-	height: 120px;
-	margin: 20px 15px 15px 15px;
-}
-.enviar button{
-	margin: 10px 15px 15px 15px;
-	background-color: #999999;
-	color: white;
-	padding: 10px 20px;
-	border: none;
-	border-radius: 2px;
-}
-.enviar button:hover{
-	background-color: #F2F2F2;
-	color: gray;
-}
-/*     Contacto     */
-/*     Footer     */
-#footer{
-	display: flex;
-	position: relative;
-	bottom: 0;
-	height: 10vh;
-	width: 100%;
-	justify-content: center;
-	align-items: center;
-	background-image: url(../img/canvas_f.png);
-	color: white;
-}
-.pie_cont{
-	padding: 5px;
-	margin: 5px 0px;
-}
-.redes{
-	display: flex;
-	justify-content: center;
-}
-/*     Footer     */
-/*     Scrollbar     */
-/* width */
-::-webkit-scrollbar {
-  width: 10px;
+.certificaciones h2 {
+    grid-column: span 2; /* Forces the heading to stay on top and span both columns */
+    text-align: center; /* Optional: centers the heading */
 }
 
-/* Track */
-::-webkit-scrollbar-track {
-  background:  #333333;
+/* Optional: Ensures the content inside each certification card is centered */
+.cert_1, .cert_2 {
+    text-align: center;
 }
 
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #999999;
-  border-radius: 5px;
+.cert_1 img, .cert_2 img {
+    max-width: 100%; /* Prevents images from breaking the layout */
+    height: auto;
 }
 
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #F2F2F2;
-}
-/*     Scrollbar     */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@media only screen and (max-width:  1365px){
-	.paneles{
-		height: auto;
-	}
-	.tabs__sidebar_res{
-		display: none;
-	}
-	.panel_izq{
-		display: none;
-	}
-	.panel_der{
-		width: 100%;
-		position: relative;
-	}
-	.tabs__content{
-		height: auto;
-	}
-	/*     Sobre mí     */
-	._sobremi{
-		display: flex;
-		flex-direction: column;
-		height: auto;
-		justify-content: center;
-		background-color: #333333;
-	}
-	.res_smi_titulos{
-		margin: 10% 10%;
-	}
-	.res_smi_titulos h1{
-		display: block;
-	}
-	.res_smi_foto{
-		display: flex;
-		margin: 10% 0%;
-		justify-content: center;
-		background-color: #333333;
-	}
-	.res_smi_foto img{
-		border-radius: 180px;
-	}
-	.res_lado_der{
-		background-color: #333333;
-	}
-	.certificacion{
-		position: relative;
-		width: 100%;
-		margin: 10%;
-	}
-	/*     Sobre mí     */
-	/*     Proyectos     */
-	/*._proyectos{
-		min-height: auto;     Cuando se agregue contenido el tamaño debe ser automático para evitar el desbordamiento.
-	}*/
-	/*     Proyectos     */
+/* Animations */
+@keyframes blinker {
+    0%, 100% { opacity: .30; }
+    4%, 96% { opacity: .45; }
+    16%, 80% { opacity: .60; }
+    32%, 64% { opacity: .75; }
+    48% { opacity: .90; }
 }
 
-@media only screen and (max-width:  768px){
-	.paneles{
-		height: auto;
-		position: relative;
-	}
-	.tabs__sidebar{
-		display: none;
-	}
-	.tabs__sidebar_res{
-		display: flex;
-		height: 10vh;
-	}
-	.tabs__content{
-		height: auto;
-	}
-	/*     Sobre mi     */
-	._sobremi{
-		height: auto;
-		position: relative;
-	}
-	.res_smi_titulos{
-		margin: 10% 10%;
-	}
-	.texto_smi{
-		margin: 10% 10%;
-	}
-	.res_smi_foto img{
-		width: 320px;
-		height: 320px;
-	}
-	/*     Sobre mi     */
+/* Contact Section */
+._contacto {
+    display: flex;
+    min-height: 90vh;
+    align-items: center;
+    justify-content: center;
+    background-color: #333333;
+    padding: 20px;
 }
 
-@media only screen and (max-width:  480px){
-	.paneles{
-		height: auto;
-		position: relative;
-	}
-	.tabs__sidebar{
-		display: none;
-	}
-	.tabs__sidebar_res{
-		display: flex;
-		height: 10vh;
-	}
-	.tabs__content{
-		height: auto;
-	}
-	/*     Sobre mi     */
-	._sobremi{
-		height: auto;
-		position: relative;
-	}
-	.res_smi_titulos{
-		margin: 10% 10%;
-	}
-	.texto_smi {
-		margin: 10% 10%;
-	}
-	.texto_smi p{
-		text-align: justify;
-	}
-	.res_smi_foto img{
-		width: 320px;
-		height: 320px;
-	}
-	/*     Sobre mi     */
+/* Form Container Card */
+.formulario {
+    background-color: #262626; /* Slightly darker than section background for depth */
+    padding: 40px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 450px; /* Gives the form a solid, professional width */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* The actual Form layout */
+.formulario form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px; /* Perfectly spaces out form blocks */
+}
+
+/* Individual Label + Input Blocks */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* Spaces the label slightly above its input */
+}
+
+.form-group label {
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-weight: 500;
+    font-family: sans-serif;
+}
+
+/* Standardized Styling for Inputs and Textareas */
+.formulario input, 
+.formulario textarea {
+    width: 100%;
+    padding: 14px;
+    background-color: #444444;
+    color: #ffffff;
+    border: 1px solid #555555;
+    border-radius: 4px;
+    font-size: 1rem;
+    box-sizing: border-box; /* Crucial: stops padding from breaking element width */
+    transition: all 0.3s ease; /* Smooth transitions for interactions */
+}
+
+/* Fixed sizing for the Message Box */
+.formulario textarea {
+    height: 140px;
+    resize: none; /* Prevents users from dragging and breaking your UI layout */
+    font-family: sans-serif;
+}
+
+/* Placeholder text styling */
+.formulario input::placeholder,
+.formulario textarea::placeholder {
+    color: #aaaaaa;
+    font-size: 0.9rem;
+}
+
+/* Clean, modern focus states instead of simple opacity */
+.formulario input:focus, 
+.formulario textarea:focus {
+    outline: none;
+    border-color: #002F6C; /* Highlight border on click */
+    background-color: #4a4a4a;
+}
+
+/* Premium Button Styling */
+.btn-submit {
+    width: 100%; /* Spans full width of form for modern UI look */
+    padding: 14px;
+    background-color: #002F6C; /* Noticeable primary action color */
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn-submit:hover {
+    background-color: #0047A3;
+}
+
+/* Footer Section */
+#footer {
+    display: flex;
+    height: 10vh;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../img/canvas_f.png);
+    color: white;
+}
+.pie_cont {
+    padding: 5px;
+    margin: 5px 0px;
+}
+.redes {
+    display: flex;
+    justify-content: center;
+}
+
+/* Scrollbar Styles */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #333333; }
+::-webkit-scrollbar-thumb { background: #999999; border-radius: 5px; }
+::-webkit-scrollbar-thumb:hover { background: #F2F2F2; }
+
+/* ==========================================================================
+   MOBILE RESPONSIVE LAYOUT (Up to 480px)
+   ========================================================================== 
+   */
+
+@media (max-width: 480px) {
+    
+    /* --- 1. Global Structure --- */
+    .panel_izq {
+        display: none; /* Completely hides the left panel */
+    }
+    
+    .panel_der {
+        width: 100%; /* Forces right panel to take full viewport width */
+    }
+
+    /* --- 2. Tab Navigation --- */
+    .tabs__sidebar {
+        display: none; /* Hides the desktop text buttons */
+    }
+    
+    .tabs__sidebar_res {
+        display: flex; /* Reveals the mobile icon buttons */
+        justify-content: space-around;
+        width: 100%;
+        background-color: #222222; /* Adjust to match your exact dark theme */
+        padding: 10px 0;
+    }
+
+    /* --- 3. About Me Section (._sobremi) --- */
+    ._sobremi {
+        padding-top: 20px;
+    }
+
+    .res_smi_titulos {
+        display: block; /* Reveals mobile header */
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    
+    .res_smi_titulos h1 {
+        font-size: 1.8rem;
+    }
+
+    .res_smi_foto {
+        display: flex; /* Reveals mobile photo */
+        justify-content: center;
+        margin-top: 20px;
+        padding-bottom: 30px;
+    }
+
+    .res_smi_foto img {
+        width: 100%;
+        max-width: 250px; /* Fluid scaling, prevents overflow */
+        height: auto;
+        border-radius: 50%; /* Recommended modern aesthetic */
+    }
+
+    .texto_smi {
+        margin: 0 5%;
+    }
+
+    /* --- 4. Collaborate Section (._colaboremos) --- */
+    .contenido_colaboremos {
+        margin: 20px 5%;
+    }
+
+    .certificaciones {
+        grid-template-columns: 1fr; /* Collapses grid into a single vertical column */
+        gap: 20px;
+    }
+
+    .certificaciones h2 {
+        grid-column: span 1; /* Fixes grid spanning for single column */
+        font-size: 1.5rem;
+    }
+
+    /* --- 5. Contact Section (._contacto) --- */
+    ._contacto {
+        padding: 20px 10px;
+    }
+
+    .formulario {
+        padding: 24px 16px; /* Tightens padding to maximize screen real estate */
+    }
+
+    /* --- 6. Footer --- */
+    .pie_cont {
+        display: flex;
+        flex-direction: column; /* Stacks social icons and copyright vertically */
+        align-items: center;
+        gap: 15px;
+        padding: 20px 0;
+    }
+}
+
+/* ==========================================================================
+   TABLET RESPONSIVE LAYOUT (481px to 768px)
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    
+    /* --- 1. Global Structure --- */
+    .panel_izq {
+        display: none; /* Hides left panel to avoid a cramped split-screen */
+    }
+    
+    .panel_der {
+        width: 100%; /* Claims full width for the content */
+    }
+
+    /* --- 2. About Me Section (._sobremi) --- */
+    ._sobremi {
+        padding-top: 30px;
+    }
+
+    /* Reveal the hidden titles and photo since panel_izq is gone */
+    .res_smi_titulos {
+        display: block; 
+        text-align: center;
+        margin-bottom: 24px;
+    }
+
+    .res_smi_titulos h1 {
+        font-size: 2.2rem;
+    }
+
+    .res_smi_foto {
+        display: flex; 
+        justify-content: center;
+        margin-top: 30px;
+        padding-bottom: 40px;
+    }
+
+    .res_smi_foto img {
+        width: 100%;
+        max-width: 300px; /* Slightly larger than mobile, but still safe */
+        height: auto;
+        border-radius: 50%;
+    }
+
+    /* Keep margins comfortable for reading on 7-8 inch screens */
+    .texto_smi {
+        margin: 0 10%; 
+    }
+
+    /* --- 3. Collaborate Section (._colaboremos) --- */
+    .contenido_colaboremos {
+        margin: 30px 10%;
+    }
+
+    /* Collapse the grid to a single column to prevent badges from overlapping text */
+    .certificaciones {
+        grid-template-columns: 1fr; 
+        gap: 30px;
+    }
+
+    .certificaciones h2 {
+        grid-column: span 1; 
+        font-size: 1.8rem;
+    }
+
+    /* --- 4. Contact Section (._contacto) --- */
+    ._contacto {
+        padding: 40px 20px;
+    }
+
+    .formulario {
+        width: 90%; /* Allows the form card to breathe rather than touching edges */
+        padding: 32px 24px; 
+    }
+}
+
+/* ==========================================================================
+   LAPTOPS & SMALL DESKTOPS RESPONSIVE LAYOUT (769px to 1024px)
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+    
+    /* --- 1. Global Structure --- */
+    .panel_izq {
+        display: none; /* Continues to hide the left panel */
+    }
+    
+    .panel_der {
+        width: 100%; /* Claims full viewport width */
+    }
+
+    /* --- 2. About Me Section (._sobremi) --- */
+    ._sobremi {
+        padding-top: 40px;
+    }
+
+    /* Reveal the hidden titles and photo since the left panel is gone */
+    .res_smi_titulos {
+        display: block; 
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .res_smi_titulos h1 {
+        font-size: 2.5rem; /* Larger font size appropriate for laptops */
+    }
+
+    .res_smi_foto {
+        display: flex; 
+        justify-content: center;
+        margin-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    .res_smi_foto img {
+        width: 100%;
+        max-width: 350px; /* Safely scaled up for 1024px screens */
+        height: auto;
+        border-radius: 50%;
+    }
+
+    /* Optimal reading width for paragraphs on medium-large screens */
+    .texto_smi {
+        margin: 0 15%; 
+    }
+
+    /* --- 3. Collaborate Section (._colaboremos) --- */
+    .contenido_colaboremos {
+        margin: 40px 15%;
+    }
+
+    .certificaciones {
+        /* Since the left panel is gone, we have plenty of room to keep 2 columns */
+        grid-template-columns: 1fr 1fr; 
+        gap: 40px;
+    }
+
+    /* --- 4. Contact Section (._contacto) --- */
+    ._contacto {
+        padding: 60px 20px;
+    }
+
+    .formulario {
+        width: 80%;
+        max-width: 600px; /* Keeps the form from looking overly stretched */
+        padding: 40px; 
+    }
 }
